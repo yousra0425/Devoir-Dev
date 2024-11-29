@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="devoir1.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <dialog open>
+        <p>Greetings, one and all!</p>
+        <form method="dialog">
+            <button>OK</button>
+        </form>
+    </dialog> -->
+
+    <header id="header">
+        <p style="cursor: pointer;" onclick="switchPanels()">
+            ◀ ▶
+        </p>
+
+        <p>
+            English: irregular verbs
+        </p>
+    </header>
+
+    <main id="main" class="container">
+        <section id="leftBar" class="left-s">
+            <table id="table" border="1">
+                <!-- Content Goes Here -->
+            </table>
+                <!-- Add the statistics paragraph here -->
+        <p id="statsText" class="statistics"></p>
+        </section>
+
+        <aside id="rightBar" class="right-s">
+        <ul></ul>
+            <div id="expand">
+                <p style="cursor: pointer;" onclick="expand()">
+                    ▶
+                </p>
+            </div>
+
+            <div class="links-panel">
+                <div class="links-head">
+                    <button id="addVerbBtn" onclick="addVerb()">Add Verb</button>
+                    <input id="findVerbInput" placeholder="Verb to find " type="text">
+                    <button id="findVerbBtn" onclick="findVerb()">Find</button>
+                </div>
+
+                <section class="links-body">
+
+                    <footer class="statistics">
+                        <!-- Statistics Section -->
+                            <h3>Statistics</h3>
+                            <p id="statisticsText">5 verbs on average per letter:</p>
+                    </footer>
+                </section>
+            </div>
+        </aside>
+    </main>
+
+   
+
+    <script src="devoir1.js"></script>
+</body>
+
+</html>
+
+
+            
+        
+
+    
+   
