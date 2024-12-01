@@ -10,18 +10,12 @@
 
 <body>
 
-    <!-- <dialog open>
-        <p>Greetings, one and all!</p>
-        <form method="dialog">
-            <button>OK</button>
-        </form>
-    </dialog> -->
-
     <header id="header">
-        <p style="cursor: pointer;" onclick="switchPanels()">
-            ◀ ▶
-        </p>
-
+        <div style="display: flex;">
+            <p style="cursor: pointer;" onclick="switchPanels()">
+                ◀ ▶
+            </p>
+    </div>
         <p>
             English: irregular verbs
         </p>
@@ -33,36 +27,59 @@
                 <!-- Content Goes Here -->
             </table>
                 <!-- Add the statistics paragraph here -->
-        <p id="statsText" class="statistics"></p>
         </section>
 
         <aside id="rightBar" class="right-s">
         <ul></ul>
             <div id="expand">
-                <p style="cursor: pointer;" onclick="expand()">
+                <p id="expandToggle" style="cursor: pointer;" onclick="expand()">
                     ▶
                 </p>
             </div>
+            
 
             <div class="links-panel">
-                <div class="links-head">
-                    <button id="addVerbBtn" onclick="addVerb()">Add Verb</button>
+                <div class="links-head" style="display: flex; justify-content: space-between; width: 70%">
+                    <button id="addVerbBtn"  onclick="addVerb()">Add Verb</button>
                     <input id="findVerbInput" placeholder="Verb to find " type="text">
                     <button id="findVerbBtn" onclick="findVerb()">Find</button>
                 </div>
+                <div class="links">
+                
+                </div>
 
                 <section class="links-body">
+                    <h3 style="padding-left: 50%;">Statistics</h3>
 
                     <footer class="statistics">
                         <!-- Statistics Section -->
-                            <h3>Statistics</h3>
-                            <p id="statisticsText">5 verbs on average per letter:</p>
+                            <p id="statsText" class="statistics"></p>
+
                     </footer>
                 </section>
             </div>
         </aside>
     </main>
 
+             <div class="verbs-list">
+                     <button onclick="showDetails('run', 'to move swiftly on foot', ['dash', 'sprint'], 'https://example.com/image-run.jpg')">Run</button>
+                     <button onclick="showDetails('go', 'to move from one place to another', ['proceed', 'travel'], 'https://example.com/image-go.jpg')">Go</button>
+                 </div>
+                
+                 <div id="detailsModal" class="modal">
+                     <div class="modal-content">
+                         <span class="close" onclick="closeModal()">&times;</span>
+                         <h2 id="verbTitle"></h2>
+                         <p id="verbDescription"></p>
+                         <h4>Definitions & Examples:</h4>
+                         <ul id="verbDefsExamp"></ul>
+                         <h4>Synonyms:</h4>
+                         <ul id="verbSynonyms"></ul>
+                         <h4>Antonyms:</h4>
+                         <ul id="verbAntonyms"></ul>
+                         <img id="verbImage" alt="Verb illustration" style="width:100%; max-height:300px; object-fit:contain;">
+                     </div>
+                 </div>
    
 
     <script src="devoir1.js"></script>
