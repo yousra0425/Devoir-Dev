@@ -1,20 +1,18 @@
-/* Universal reset */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in width and height */
 }
 
 body {
     height: 100%;
 }
 
-/* Header Styling */
 header {
     background-color: #93DBF3;
     border: 5px solid;
-    padding: 20px;
+    padding: 30px 20px 20px 20px; /* Consolidated padding */
     margin: 5px;
-    padding-top: 30px;
     display: flex;
     justify-content: space-between;
 }
@@ -25,7 +23,6 @@ header p {
     font-weight: bold;
 }
 
-/* Container for Main Body */
 .container {
     width: 100%;
     height: calc(100vh - 110px);
@@ -39,10 +36,9 @@ header p {
     width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Push the stats to the bottom */
-    height: 100%; /* Ensure it fills the height of its parent */
+    justify-content: space-between; 
+    height: 100%; 
     padding: 10px;
-    box-sizing: border-box;
 }
 
 .right-s {
@@ -53,7 +49,6 @@ header p {
     display: flex;
 }
 
-/* Table Styling */
 table {
     display: block;
     width: 100%;
@@ -66,12 +61,10 @@ table tr {
     display: flex;
 }
 
-/* Table Data Cells */
 td {
     padding: 10px;
 }
 
-/* Specific column width styling */
 table tr td:nth-child(1) {
     width: 10%;
 }
@@ -92,30 +85,25 @@ table tr td:nth-child(5) {
     width: 25%;
 }
 
-/* Styling Table Header */
 table tr:nth-child(1) {
     background-color: rgb(141, 248, 216) !important;
     font-weight: bold;
 }
 
-/* Alternating row background colors */
 table tr:nth-child(2n+1) {
     background-color: rgb(246, 220, 192);
 }
 
-/* Buttons inside the table */
 table td button {
-    margin-right: 30px; /* Add space between buttons */
+    margin-right: 30px; 
 }
 
-/* Input Fields Styling */
 input {
     padding-right: 10px;
     padding-left: 10px;
     margin-right: 10px;
 }
 
-/* Expand button styling */
 #expand {
     height: 100%;
     width: 30px;
@@ -126,16 +114,13 @@ input {
     align-items: center;
 }
 
-/* Fixed positioned list */
-ul {
-    position: fixed;
+.letter-links {
+    position: relative;
     top: 50%;
     right: 0%;
     width: 30%;
 }
 
-
-/* Styling span elements */
 span {
     font-weight: bold;
     font-size: larger;
@@ -143,12 +128,10 @@ span {
     color: red;
 }
 
-/*Les cellules vides ont une bordure rouge */
-td:empty{
+td:empty {
     border: solid red 3px;
 }
 
-/* Right Panel Header */
 .right-bar-header {
     padding: 20px;
     display: flex;
@@ -160,10 +143,21 @@ td:empty{
     width: 100px;
 }
 
-/* Links Panel */
 .links-panel {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.links {
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    align-content: center;
+    border: 5px dotted grey;
 }
 
 .links-panel button {
@@ -171,15 +165,13 @@ td:empty{
     padding-right: 30px;
 }
 
-/* Links Body */
 .links-body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90%;
+    padding-top: 0%;
 }
 
-/* Styling links body container */
 .links-body div {
     margin: 20px;
     border: 5px dotted gray;
@@ -192,35 +184,44 @@ td:empty{
     padding: 20px;
 }
 
-#statistics {
-    padding: 10px;
-    background-color: #f0f8ff;
-    border-top: 2px solid #ccc;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-#statistics h3 {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #333;
-}
-
-#statistics p {
-    margin: 5px 0;
-    color: #555;
-}
-/* Footer Styling */
 footer {
     background-color: #8ecfe9;
     text-align: left;
     padding: 10px;
 }
 
-
-.statistics {
-    margin-top: auto; /* Push the stats to the bottom */
-    font-size: 14px; /* Adjust font size if necessary */
-    color: black; /* Adjust color to match the theme */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); 
 }
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; 
+    text-align: left;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
